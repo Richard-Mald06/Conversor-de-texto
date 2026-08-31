@@ -21,7 +21,3 @@ def convertir_temperatura(texto):
         return float(texto)
     except ValueError:
         return None  
-##################### 
-
-def humedad(): 
-    humedad = float 
