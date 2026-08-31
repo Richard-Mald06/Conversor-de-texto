@@ -1,4 +1,4 @@
-# Trabajo Practico Integrados 1
+# Trabajo Practico Integrado 1
 
 ## Descripcion 
 Programa para procesar datos meteorologicos del Servicio Meteorologico Nacional y convertirlos posteriormente de TXT a JSON para ser visible a
