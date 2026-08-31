@@ -1,0 +1,22 @@
+FECHA     HORA  TEMP   HUM   PNM    DD    FF     NOMBRE                                             
+          [HOA]  [�C]   [%]  [hPa]  [gr] [km/hr]                                                     
+ 20082026     0  11.3   91  1019.7  130    6     AEROPARQUE AERO                                     
+ 20082026     1  11.1   92  1019.1  120    7     AEROPARQUE AERO                                     
+ 20082026     2  10.7   95  1018.3  990    4     AEROPARQUE AERO         
+
+
+ 20082026    19  13.6   22          110    4     LA QUIACA OBSERVATORIO                              
+ 20082026    20  11.4   26          110    4     LA QUIACA OBSERVATORIO                              
+ 20082026    21   9.8   30          230    9     LA QUIACA OBSERVATORIO                              
+ 20082026     0   8.8   65  1020.5  250    4     LA RIOJA AERO                                       
+ 20082026     1   9.8   59  1020.7  270    9     LA RIOJA AERO                                       
+ 20082026     2   9.8   54  1020.1  270    6     LA RIOJA AERO                                       
+ 20082026     8   3.2   71  1019.3  270    4     ESCUELA DE AVIACION MILITA                          
+                                             R AERO                                                  
+                                                                                                     
+ 20082026     9   8.9   54  1019.9  230    7     ESCUELA DE AVIACION MILITA                          
+                                             R AERO                                                  
+                                                                                                     
+ 20082026    10  18.0   33  1019.9  230   11     ESCUELA DE AVIACION MILITA                          
+                                             R AERO                                                  
+                                                                                                     
