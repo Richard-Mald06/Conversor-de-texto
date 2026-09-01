@@ -1,6 +1,6 @@
 FECHA     HORA  TEMP   HUM   PNM    DD    FF     NOMBRE                                             
           [HOA]  [�C]   [%]  [hPa]  [gr] [km/hr]                                                     
- 20082026     0  11.3   91  1019.7  130    6     AEROPARQUE AERO                                     
+ 08202026     0  11.3   91  1019.7  130    6     AEROPARQUE AERO                                     
  20082026     1  11.1   92  1019.1  120    7     AEROPARQUE AERO                                     
  20082026     2  10.7   95  1018.3  990    4     AEROPARQUE AERO                                     
  20082026     3  10.7   94  1017.3   90    6     AEROPARQUE AERO                                     
