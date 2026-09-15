@@ -20,7 +20,11 @@ for numero, linea in enumerate(lineas):
     lista.append(linea)
 
 
-diccionario_datos = {}
+diccionario_datos = {"datos_validos":[],
+                     "datos_invalidos":[],
+                     
+}
+
 for linea in lista:
     campos = linea.strip().split()
     
@@ -30,8 +34,7 @@ for linea in lista:
         print(campos[0])
     else:
         print(f"linea invalida {linea}")
-
-        break
+        diccionario_datos["datos_invalidos"].append(linea)
 
     # print(campos)
 
