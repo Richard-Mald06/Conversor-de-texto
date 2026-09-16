@@ -1,6 +1,6 @@
 import json
 import sys
-import Validaciones
+import validaciones
 print(sys.argv[1])
 
 #python adaptar_datos.py datos/mediciones.txt datos/observaciones.json
@@ -28,10 +28,11 @@ diccionario_datos = {"datos_validos":[],
 for linea in lista:
     campos = linea.strip().split()
     
-    if Validaciones.validar_cant_parametros(campos):
+    if validaciones.validar_cant_parametros(campos):
         
         print(campos)
         print(campos[0])
+        diccionario_datos["datos_validos"].append(linea)
     else:
         print(f"linea invalida {linea}")
         diccionario_datos["datos_invalidos"].append(linea)
