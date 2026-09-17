@@ -29,18 +29,29 @@ for linea in lista:
     campos = linea.strip().split()
     
     if validaciones.validar_cant_parametros(campos):
-        
-        print(campos)
-        print(campos[0])
-        diccionario_datos["datos_validos"].append(linea)
+        print(f"la linea {linea} posee una cantidad de parametros valida")
+        # print(campos)
+        # print(campos[0])
+        # diccionario_datos["datos_validos"].append(linea)      
     else:
-        print(f"linea invalida {linea}")
-        diccionario_datos["datos_invalidos"].append(linea)
-
+        motivo = "cantidad de parametros insuficiente"
+        print(f"linea invalida {linea} no tiene la cantidad de parametros necesaria")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": motivo
+        })
     # print(campos)
-
-
+    if validaciones.validar_fecha(campos[0]):
+        print(f"la linea {linea} tiene una fecha valida")
+    else:
+        motivo  = "formato de fecha invalido"
+        print(f"linea invalida {linea} el formato de fecha no es el adecuado")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": motivo
+            })
+    print("---------------")
 
 
 with open(observaciones, "w", encoding="utf-8") as datos_salida:
-    json.dump(lista, datos_salida, indent=2)
+    json.dump(diccionario_datos, datos_salida, indent=2)

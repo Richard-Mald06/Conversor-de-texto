@@ -1,23 +1,57 @@
-[
-  "20082026     0  11.3   91  1019.7  130    6     AEROPARQUE AERO",
-  "20082026     1  11.1   92  1019.1  120    7     AEROPARQUE AERO",
-  "290   41     BARILOCHE AERO",
-  "20082026     7   7.6   75          290   31     BARILOCHE AERO",
-  "20082026     8   8.1   75          300   22     BARILOCHE AERO",
-  "20082026     9   8.3   72          300   31     BARILOCHE AERO",
-  "20082026     9   6.2   48  1018.9    0    0     CHEPES",
-  "20082026    15  26.6   16            0    0     CHEPES",
-  "20082026    21  15.8   27  1016.7    0    0     CHEPES",
-  "20082026     9   7.9   57           50    4     CHILECITO AERO",
-  "20082026    21  20.4   24          320    4     CHILECITO AERO",
-  "20082026     7   2.4   75  1018.1  330    4     ESCUELA DE AVIACION MILITA",
-  "R AERO",
-  "20082026     8   3.2   71  1019.3  270    4     ESCUELA DE AVIACION MILITA",
-  "R AERO",
-  "20082026     9   8.9   54  1019.9  230    7     ESCUELA DE AVIACION MILITA",
-  "R AERO",
-  "20082026    10  18.0   33  1019.9  230   11     ESCUELA DE AVIACION MILITA",
-  "R AERO",
-  "20082026    11  20.1   29  1019.6  160   11     ESCUELA DE AVIACION MILITA",
-  "R AERO"
-]
+{
+  "datos_validos": [],
+  "datos_invalidos": [
+    {
+      "linea": "290   41     BARILOCHE AERO",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "290   41     BARILOCHE AERO",
+      "motivo": "formato de fecha invalido"
+    },
+    {
+      "linea": "20082026    15  26.6   16            0    0     CHEPES",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "formato de fecha invalido"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "formato de fecha invalido"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "formato de fecha invalido"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "formato de fecha invalido"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "formato de fecha invalido"
+    }
+  ]
+}
