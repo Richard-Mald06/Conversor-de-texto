@@ -4,15 +4,6 @@ def validar_cant_parametros(parametros):
     else:
         return False
 
-def validar_temp(temperatura):
-    try:
-        temperatura = float(temperatura)
-    except ValueError:
-        return False
-    if -30 < temperatura < 50:
-        return True
-    return False
-
 def validar_fecha(fecha):
     if len(fecha) != 8:
             return False
@@ -38,3 +29,12 @@ def validar_hora(hora):
         return True
     else:
         return False
+
+def validar_temp(temperatura):
+    try:
+        temperatura = float(temperatura)
+    except ValueError:
+        return False
+    if -30 < temperatura < 50:
+        return True
+    return False

@@ -29,7 +29,7 @@ for linea in lista:
     campos = linea.strip().split()
     
     if validaciones.validar_cant_parametros(campos):
-        print(f"la linea {linea} posee una cantidad de parametros valida")
+        print(f"la linea: {linea} posee una cantidad de parametros valida")
         # print(campos)
         # print(campos[0])
         # diccionario_datos["datos_validos"].append(linea)      
@@ -42,7 +42,7 @@ for linea in lista:
         })
     # print(campos)
     if validaciones.validar_fecha(campos[0]):
-        print(f"la linea {linea} tiene una fecha valida")
+        print(f"la linea: {linea} tiene una fecha valida")
     else:
         motivo  = "formato de fecha invalido"
         print(f"linea invalida {linea} el formato de fecha no es el adecuado")
@@ -50,6 +50,25 @@ for linea in lista:
             "linea": linea,
             "motivo": motivo
             })
+    if validaciones.validar_hora(campos[1]):
+        print(f"la linea {linea} tiene una hora valida")
+    else:
+        motivo = "hora no valida"
+        print(f"linea invalida: {linea}, formato de hora no valido ")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": motivo,
+        }
+        )
+    if validaciones.validar_temp(campos[2]):
+        print(f"la linea:{linea} tiene una temperatura valida")
+    else:
+        motivo = "temperatura no valida"
+        print(f"linea invalida {campos[2]} no es una temperatura valida")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": motivo
+        })
     print("---------------")
 
 

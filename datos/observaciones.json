@@ -10,6 +10,10 @@
       "motivo": "formato de fecha invalido"
     },
     {
+      "linea": "290   41     BARILOCHE AERO",
+      "motivo": "hora no valida"
+    },
+    {
       "linea": "20082026    15  26.6   16            0    0     CHEPES",
       "motivo": "cantidad de parametros insuficiente"
     },
@@ -23,11 +27,7 @@
     },
     {
       "linea": "R AERO",
-      "motivo": "cantidad de parametros insuficiente"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "formato de fecha invalido"
+      "motivo": "hora no valida"
     },
     {
       "linea": "R AERO",
@@ -39,11 +39,7 @@
     },
     {
       "linea": "R AERO",
-      "motivo": "cantidad de parametros insuficiente"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "formato de fecha invalido"
+      "motivo": "hora no valida"
     },
     {
       "linea": "R AERO",
@@ -52,6 +48,34 @@
     {
       "linea": "R AERO",
       "motivo": "formato de fecha invalido"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "hora no valida"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "formato de fecha invalido"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "hora no valida"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "cantidad de parametros insuficiente"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "formato de fecha invalido"
+    },
+    {
+      "linea": "R AERO",
+      "motivo": "hora no valida"
     }
   ]
 }
