@@ -35,6 +35,48 @@ def validar_temp(temperatura):
         temperatura = float(temperatura)
     except ValueError:
         return False
-    if -30 < temperatura < 50:
+    if -30 <= temperatura <= 50:
+        return True
+    return False
+
+def validar_humedad(humedad):
+    try:
+        humedad = int(humedad)
+    except ValueError:
+        return False
+    if 0 < humedad <= 100:
+        return True
+    return False
+
+def validar_presion(presion):
+    try:
+        presion = float(presion)
+    except ValueError:
+        return False
+    if 990 <= presion <= 1060:
+        return True
+    return False
+
+def validar_direccion(direccion):
+    try:
+        direccion = float(direccion)
+    except ValueError:
+        return False
+    if 0 <= direccion <= 360:
+        return True
+    return False
+
+def validar_velocidad(velocidad):
+    try:
+        velocidad = float(velocidad)
+    except ValueError:
+        return False
+    if 0 <= velocidad <= 150:
+        return True
+    return False
+
+def validar_estacion(nombre):
+    nombre = str(nombre).strip()
+    if nombre:
         return True
     return False

@@ -3,79 +3,31 @@
   "datos_invalidos": [
     {
       "linea": "290   41     BARILOCHE AERO",
-      "motivo": "cantidad de parametros insuficiente"
-    },
-    {
-      "linea": "290   41     BARILOCHE AERO",
-      "motivo": "formato de fecha invalido"
-    },
-    {
-      "linea": "290   41     BARILOCHE AERO",
-      "motivo": "hora no valida"
+      "motivo": "cantidad de parametros no valida"
     },
     {
       "linea": "20082026    15  26.6   16            0    0     CHEPES",
-      "motivo": "cantidad de parametros insuficiente"
+      "motivo": "cantidad de parametros no valida"
     },
     {
       "linea": "R AERO",
-      "motivo": "cantidad de parametros insuficiente"
+      "motivo": "cantidad de parametros no valida"
     },
     {
       "linea": "R AERO",
-      "motivo": "formato de fecha invalido"
+      "motivo": "cantidad de parametros no valida"
     },
     {
       "linea": "R AERO",
-      "motivo": "hora no valida"
+      "motivo": "cantidad de parametros no valida"
     },
     {
       "linea": "R AERO",
-      "motivo": "cantidad de parametros insuficiente"
+      "motivo": "cantidad de parametros no valida"
     },
     {
       "linea": "R AERO",
-      "motivo": "formato de fecha invalido"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "hora no valida"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "cantidad de parametros insuficiente"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "formato de fecha invalido"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "hora no valida"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "cantidad de parametros insuficiente"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "formato de fecha invalido"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "hora no valida"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "cantidad de parametros insuficiente"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "formato de fecha invalido"
-    },
-    {
-      "linea": "R AERO",
-      "motivo": "hora no valida"
+      "motivo": "cantidad de parametros no valida"
     }
   ]
 }
