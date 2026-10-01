@@ -1,9 +1,3 @@
-def validar_cant_parametros(parametros):
-    if len(parametros)>=8:
-        return True
-    else:
-        return False
-
 def cant_datos_numericos(campos):
     i = 0
     for elemento in campos:
@@ -63,13 +57,13 @@ def validar_presion(presion):
         presion = float(presion)
     except ValueError:
         return False
-    if 980 <= presion <= 1060:
+    if 960 <= presion <= 1060:
         return True
     return False
 
 def validar_direccion(direccion):
     try:
-        direccion = float(direccion)
+        direccion = int(direccion)
     except ValueError:
         return False
     if 0 <= direccion <= 360:
@@ -78,7 +72,7 @@ def validar_direccion(direccion):
 
 def validar_velocidad(velocidad):
     try:
-        velocidad = float(velocidad)
+        velocidad = int(velocidad)
     except ValueError:
         return False
     if 0 <= velocidad <= 150:

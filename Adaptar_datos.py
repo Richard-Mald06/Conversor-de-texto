@@ -1,12 +1,9 @@
 import json
 import sys
 import validaciones
-print(sys.argv[1])
-
 #python adaptar_datos.py datos/mediciones.txt datos/observaciones.json
 archivo_medicion = sys.argv[1]
 observaciones = sys.argv[2]
-print(observaciones)
 
 lista = []
 with open(archivo_medicion, "r", encoding="utf-8") as archivo:
@@ -19,11 +16,14 @@ for numero, linea in enumerate(lineas):
         continue
     lista.append(linea)
 
-
-diccionario_datos = {"datos_validos":[],
+diccionario_datos = {"resumen":{"total_registros" : 0,
+                                "registros_validos" : 0,
+                                "registros_invalidos" : 0                                
+                                },
+                     "datos_validos":[],
                      "datos_invalidos":[],
-                     
 }
+
 diccionario_motivos = {
     "parametros" : "faltan datos numericos",
     "fecha" : "formato de fecha no valido",
@@ -36,85 +36,59 @@ diccionario_motivos = {
     "nombre" : "formato de nombre no valido",
 }
 
-i= 0
 for linea in lista:
-    i +=1
     campos = linea.strip().split()
     
     if validaciones.cant_datos_numericos(campos) != 7:
-        print(f"linea invalida {linea}, faltan datos")
         diccionario_datos["datos_invalidos"].append({
             "linea": linea, 
             "motivo": diccionario_motivos["parametros"]
         })
         continue
-    else:
-        print(f"la linea: {linea} posee  una cantidad de parametros valida ")
 
-    if validaciones.validar_fecha(campos[0]):
-        print(f"la linea: {linea} tiene una fecha valida")
-    else:
-        print(f"linea invalida {linea} el formato de fecha no es el adecuado")
+    if not validaciones.validar_fecha(campos[0]):
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["fecha"]
             })
         continue
 
-    if validaciones.validar_hora(campos[1]):
-        print(f"la linea: {linea} tiene una hora valida")
-    else:
-        print(f"linea invalida: {linea}, formato de hora no valido ")
+    if not validaciones.validar_hora(campos[1]):
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["hora"]
         })
         continue
 
-    if validaciones.validar_temp(campos[2]):
-        print(f"la linea:{linea} tiene una temperatura valida")
-    else:
-        print(f"linea invalida {campos[2]} no es una temperatura valida")
+    if not validaciones.validar_temp(campos[2]):
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["temperatura"]
         })
         continue
 
-    if validaciones.validar_humedad(campos[3]):
-        print(f"la linea:{linea} tiene una humedad valida") 
-    else:
-        print(f"linea invalida {campos[3]} no es una humedad valida")
+    if not validaciones.validar_humedad(campos[3]):
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["humedad"]
         })
         continue
 
-    if validaciones.validar_presion(campos[4]):
-        print(f"la linea:{linea} tiene una presion valida") 
-    else:
-        print(f"linea invalida {campos[4]} no es una presion valida")
+    if not validaciones.validar_presion(campos[4]):
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["presion"]
         })
         continue
 
-    if validaciones.validar_direccion(campos[5]):
-        print(f"la linea:{linea} tiene una direccion valida") 
-    else:
-        print(f"linea invalida {campos[5]} no es una direccion valida")
+    if not validaciones.validar_direccion(campos[5]):
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["direccion"]
         })
         continue
 
-    if validaciones.validar_velocidad(campos[6]):
-        print(f"la linea:{linea} tiene una velocidad valida") 
-    else:
-        print(f"linea invalida {campos[6]} no es una velocidad valida")
+    if not validaciones.validar_velocidad(campos[6]):
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["velocidad"]
@@ -122,26 +96,45 @@ for linea in lista:
         continue
 
     nombre_estacion = " ".join(campos[7:])
-    print(nombre_estacion)
-    if validaciones.validar_estacion(nombre_estacion):
-        print(f"la linea:{linea} tiene una estacion valida") 
-    else:
-        print(f"linea invalida {nombre_estacion} no es una estacion valida")
+    if not validaciones.validar_estacion(nombre_estacion):
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["nombre"]
         })
         continue
 
-    print(f"verificacion {i}---------------")
-
     fecha_valida = int(campos[0])
     hora_valida = int(campos[1])
+    temperatura_valida = float(campos[2])
+    humedad_valida = int(campos[3])
+    presion_valida = float(campos[4])
+    direccion_valida = int(campos[5])
+    velocidad_valida = int(campos[6])
+    estacion_valida = str(nombre_estacion)
 
     diccionario_datos["datos_validos"].append({
-        "fecha" : fecha_valida
+        "fecha" : fecha_valida,
+        "hora" : hora_valida,
+        "temperatura" : temperatura_valida,
+        "humedad" : humedad_valida,
+        "presion" : presion_valida,
+        "direccion" : direccion_valida,
+        "velocidad" : velocidad_valida,
+        "estacion" : estacion_valida
     })
-    
+
+cant_registros = len(diccionario_datos["datos_validos"]) + len(diccionario_datos["datos_invalidos"])
+cant_validos = len(diccionario_datos["datos_validos"])
+cant_invalidos = len(diccionario_datos["datos_invalidos"])
+
+diccionario_datos["resumen"]["total_registros"] = cant_registros
+diccionario_datos["resumen"]["registros_validos"] = cant_validos
+diccionario_datos["resumen"]["registros_invalidos"]= cant_invalidos
+
+print(f"----------resumen----------")
+print(f"la cantidad de registros leidos fue {cant_registros}")
+print(f"registros validos: {cant_validos}")
+print(f"registros invalidos: {cant_invalidos}")
 
 with open(observaciones, "w", encoding="utf-8") as datos_salida:
     json.dump(diccionario_datos, datos_salida, indent=2)
