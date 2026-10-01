@@ -35,7 +35,7 @@ def validar_temp(temperatura):
         temperatura = float(temperatura)
     except ValueError:
         return False
-    if -30 <= temperatura <= 50:
+    if -35 <= temperatura <= 50:
         return True
     return False
 
@@ -53,7 +53,7 @@ def validar_presion(presion):
         presion = float(presion)
     except ValueError:
         return False
-    if 990 <= presion <= 1060:
+    if 980 <= presion <= 1060:
         return True
     return False
 

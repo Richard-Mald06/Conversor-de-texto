@@ -38,12 +38,13 @@ diccionario_motivos = {
 
 i= 0
 for linea in lista:
+    i +=1
     campos = linea.strip().split()
     
     if not validaciones.validar_cant_parametros(campos): 
         print(f"linea invalida {linea} no tiene la cantidad de parametros necesaria")
         diccionario_datos["datos_invalidos"].append({
-            "linea": linea,
+            "linea": linea, 
             "motivo": diccionario_motivos["parametros"]
         })
         continue
@@ -58,15 +59,18 @@ for linea in lista:
             "linea": linea,
             "motivo": diccionario_motivos["fecha"]
             })
+        continue
+
     if validaciones.validar_hora(campos[1]):
-        print(f"la linea {linea} tiene una hora valida")
+        print(f"la linea: {linea} tiene una hora valida")
     else:
         print(f"linea invalida: {linea}, formato de hora no valido ")
         diccionario_datos["datos_invalidos"].append({
             "linea": linea,
             "motivo": diccionario_motivos["hora"]
-        }
-        )
+        })
+        continue
+
     if validaciones.validar_temp(campos[2]):
         print(f"la linea:{linea} tiene una temperatura valida")
     else:
@@ -75,10 +79,67 @@ for linea in lista:
             "linea": linea,
             "motivo": diccionario_motivos["temperatura"]
         })
-        
-    print(f"verificacion {i}---------------")
-    i +=1
+        continue
 
+    if validaciones.validar_humedad(campos[3]):
+        print(f"la linea:{linea} tiene una humedad valida") 
+    else:
+        print(f"linea invalida {campos[3]} no es una humedad valida")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": diccionario_motivos["humedad"]
+        })
+        continue
+
+    if validaciones.validar_presion(campos[4]):
+        print(f"la linea:{linea} tiene una presion valida") 
+    else:
+        print(f"linea invalida {campos[4]} no es una presion valida")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": diccionario_motivos["presion"]
+        })
+        continue
+
+    if validaciones.validar_direccion(campos[5]):
+        print(f"la linea:{linea} tiene una direccion valida") 
+    else:
+        print(f"linea invalida {campos[5]} no es una direccion valida")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": diccionario_motivos["direccion"]
+        })
+        continue
+
+    if validaciones.validar_velocidad(campos[6]):
+        print(f"la linea:{linea} tiene una velocidad valida") 
+    else:
+        print(f"linea invalida {campos[6]} no es una velocidad valida")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": diccionario_motivos["velocidad"]
+        })
+        continue
+
+    nombre_estacion = " ".join(campos[7:])
+    print(nombre_estacion)
+    if validaciones.validar_estacion(nombre_estacion):
+        print(f"la linea:{linea} tiene una estacion valida") 
+    else:
+        print(f"linea invalida {nombre_estacion} no es una estacion valida")
+        diccionario_datos["datos_invalidos"].append({
+            "linea": linea,
+            "motivo": diccionario_motivos["nombre"]
+        })
+        continue
+
+    print(f"verificacion {i}---------------")
+
+    diccionario_datos["datos_validos"].append({
+        "linea" : linea,
+        "parametros" : campos
+    })
+    
 
 with open(observaciones, "w", encoding="utf-8") as datos_salida:
     json.dump(diccionario_datos, datos_salida, indent=2)
