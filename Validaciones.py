@@ -4,6 +4,16 @@ def validar_cant_parametros(parametros):
     else:
         return False
 
+def cant_datos_numericos(campos):
+    i = 0
+    for elemento in campos:
+        try:
+            float(elemento)
+            i += 1
+        except ValueError:
+            return i
+    return i
+
 def validar_fecha(fecha):
     if len(fecha) != 8:
             return False

@@ -25,7 +25,7 @@ diccionario_datos = {"datos_validos":[],
                      
 }
 diccionario_motivos = {
-    "parametros" : "cantidad de parametros no valida",
+    "parametros" : "faltan datos numericos",
     "fecha" : "formato de fecha no valido",
     "hora" : "hora no valida",
     "temperatura" : "temperatura no valida/fuera de rango",
@@ -41,15 +41,15 @@ for linea in lista:
     i +=1
     campos = linea.strip().split()
     
-    if not validaciones.validar_cant_parametros(campos): 
-        print(f"linea invalida {linea} no tiene la cantidad de parametros necesaria")
+    if validaciones.cant_datos_numericos(campos) != 7:
+        print(f"linea invalida {linea}, faltan datos")
         diccionario_datos["datos_invalidos"].append({
             "linea": linea, 
             "motivo": diccionario_motivos["parametros"]
         })
         continue
     else:
-        print(f"la linea: {linea} posee una cantidad de parametros valida")
+        print(f"la linea: {linea} posee  una cantidad de parametros valida ")
 
     if validaciones.validar_fecha(campos[0]):
         print(f"la linea: {linea} tiene una fecha valida")
@@ -135,9 +135,11 @@ for linea in lista:
 
     print(f"verificacion {i}---------------")
 
+    fecha_valida = int(campos[0])
+    hora_valida = int(campos[1])
+
     diccionario_datos["datos_validos"].append({
-        "linea" : linea,
-        "parametros" : campos
+        "fecha" : fecha_valida
     })
     
 
