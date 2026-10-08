@@ -1,6 +1,6 @@
 import json
 import sys
-import validaciones
+import conversor.validaciones as validaciones
 #python adaptar_datos.py datos/mediciones.txt datos/observaciones.json
 archivo_medicion = sys.argv[1]
 observaciones = sys.argv[2]
