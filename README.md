@@ -15,3 +15,4 @@ Como resultado, se genera un archivo JSON que contiene la información del proce
 
 ## JSON a Generar 
 La idea es que el archivo JSON sea formato clave-valor. 
+    -se acepta cualquier fecha real, sin restricción de años

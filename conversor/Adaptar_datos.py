@@ -1,13 +1,32 @@
 import json
 import sys
-import conversor.validaciones as validaciones
-#python adaptar_datos.py datos/mediciones.txt datos/observaciones.json
+import validaciones
+from pathlib import Path
+#parte 1: python adaptar_datos.py datos/mediciones.txt datos/observaciones.json
+#ejecutar por terminal ahora: python conversor/adaptar_datos.py appweb/datos/mediciones.txt appweb/datos/observaciones.json
+
+#etapa 3: python adaptar_datos.py datos/observaciones.txt salida
+if len(sys.argv) != 3:
+    print("Debe escribir en la terminal: python adaptar_datos.py datos/mediciones.txt datos/observaciones.json")
+    sys.exit(1)
+
 archivo_medicion = sys.argv[1]
 observaciones = sys.argv[2]
 
 lista = []
-with open(archivo_medicion, "r", encoding="utf-8") as archivo:
-    lineas = archivo.readlines()
+try:
+    with open(archivo_medicion, "r", encoding="utf-8") as archivo:
+        lineas = archivo.readlines()
+except FileNotFoundError:
+    print(f"Error: no se encontró el archivo '{archivo_medicion}'")
+    sys.exit(1)
+except PermissionError:
+    print(f"sin permiso para leer  {archivo_medicion}")
+    sys.exit(1)
+except OSError as error:
+    print(f"Error al leer '{archivo_medicion}': {error}")
+    sys.exit(1)
+
 for numero, linea in enumerate(lineas):
     if numero < 2:
         continue
@@ -110,7 +129,7 @@ for linea in lista:
     presion_valida = float(campos[4])
     direccion_valida = int(campos[5])
     velocidad_valida = int(campos[6])
-    estacion_valida = str(nombre_estacion)
+    estacion_valida = nombre_estacion
 
     diccionario_datos["datos_validos"].append({
         "fecha" : fecha_valida,
@@ -136,5 +155,17 @@ print(f"la cantidad de registros leidos fue {cant_registros}")
 print(f"registros validos: {cant_validos}")
 print(f"registros invalidos: {cant_invalidos}")
 
-with open(observaciones, "w", encoding="utf-8") as datos_salida:
-    json.dump(diccionario_datos, datos_salida, indent=2)
+
+
+try:
+    with open(observaciones, "w", encoding="utf-8") as datos_salida:
+        json.dump(diccionario_datos, datos_salida, indent=2)
+except FileNotFoundError:
+    print(f"Error: no se encontró la carpeta de destino de '{observaciones}'")
+    sys.exit(1)
+except PermissionError:
+    print(f"no se puede escribir en {observaciones}, el destino es una carpeta o no tenes permiso")
+    sys.exit(1)
+except OSError as error:
+    print(f"Error al escribir '{observaciones}': {error}")
+    sys.exit(1)
