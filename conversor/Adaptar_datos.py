@@ -21,7 +21,7 @@ if not ruta_entrada.exists() or not ruta_entrada.is_file():
     sys.exit(1)
 
 if not ruta_salida.exists() or not ruta_salida.is_dir():
-    print(f"ruta de salida {ruta_salida}no valida")
+    print(f"ruta de salida {ruta_salida} no valida")
     sys.exit(1)
 
 # archivo_medicion = sys.argv[1]
