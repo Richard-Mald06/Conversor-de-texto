@@ -21,4 +21,4 @@ La idea es que el archivo JSON sea formato clave-valor.
 ## Comandos para ejecutar en terminal
 - conversor txt a JSON: python conversor/adaptar_datos.py appweb/datos/mediciones.txt appweb/datos
 
--procesamiento: python appweb/procesar_datos.py <ruta_json> "<ESTACION>" <medicion> (la ruta del json incluye appweb/datos/ ya que se ejecuta desde el conversor de texto)
+- procesamiento: python appweb/procesar_datos.py <ruta_json> "<ESTACION>" <medicion> (la ruta del json incluye appweb/datos/ ya que se ejecuta desde el conversor de texto)
