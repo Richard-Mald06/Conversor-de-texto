@@ -1,9 +1,7 @@
 from datos import cargar_json, filtrar_datos
-from estadisticas import calcular_estadisticas
+from graficos import generar_csv
 
 datos = cargar_json("appweb/datos/mediciones-20261012-151247.json")
 filtrados = filtrar_datos(datos, "BAHIA BLANCA AERO", "temperatura")
-print(calcular_estadisticas(filtrados))
-
-# Control manual con valores conocidos
-print(calcular_estadisticas([{"valor": -2}, {"valor": 4}, {"valor": 1}]))
+generar_csv(filtrados, "appweb/salidas/prueba_bahia_temperatura.csv")
+print("CSV generado")

@@ -5,12 +5,12 @@ def cargar_json(ruta_json):
         return datos
 
 def filtrar_datos(datos, estacion, medicion):
-    lista_datos = []
+    filtrados = []
     for dato in datos["datos_validos"]:
         if estacion.upper() == dato["estacion"].upper():
-            lista_datos.append({
+            filtrados.append({
                 "fecha": dato["fecha"],
                 "hora": dato["hora"],
                 "valor": dato[medicion]
                 })        
-    return lista_datos
+    return filtrados
