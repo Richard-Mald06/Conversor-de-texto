@@ -16,3 +16,9 @@ Como resultado, se genera un archivo JSON que contiene la información del proce
 ## JSON a Generar 
 La idea es que el archivo JSON sea formato clave-valor. 
     -se acepta cualquier fecha real, sin restricción de años
+
+
+## Comandos para ejecutar en terminal
+- conversor txt a JSON: python conversor/adaptar_datos.py appweb/datos/mediciones.txt appweb/datos
+
+-procesamiento: python appweb/procesar_datos.py <ruta_json> "<ESTACION>" <medicion> (la ruta del json incluye appweb/datos/ ya que se ejecuta desde el conversor de texto)
