@@ -7,7 +7,7 @@ from pathlib import Path
 #ejecutar por terminal ahora: python conversor/adaptar_datos.py appweb/datos/mediciones.txt appweb/datos/observaciones.json
 
 #etapa 3: python adaptar_datos.py datos/observaciones.txt salida
-#ejecutar con: python conversor/adaptar_datos.py appweb/datos/mediciones.txt appweb/datos
+#ejecutar con: python conversor/adaptar_datos.py appweb/datos/mediciones.txt appweb/salidas
 print(sys.argv)
 if len(sys.argv) != 3:
     print("Debe escribir en la terminal: python adaptar_datos.py datos/mediciones.txt datos/observaciones.json")
@@ -25,7 +25,7 @@ if not ruta_salida.exists() or not ruta_salida.is_dir():
     sys.exit(1)
 
 # archivo_medicion = sys.argv[1]
-observaciones = sys.argv[2]
+# observaciones = sys.argv[2]
 
 lista = []
 try:
